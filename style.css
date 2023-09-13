@@ -3,8 +3,152 @@
     margin: 0;
     box-sizing: border-box;
 }
-.sign-up-img{
-    width: 100dvw;  
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(/assets/fonts/Roboto-Bold.ttf);
 }
-.attribution { font-size: 11px; text-align: center; }
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(/assets/fonts/Roboto-Regular.ttf);
+}
+
+.sign-up-img{
+    width: 100dvw;
+    content: url(./assets/images/illustration-sign-up-mobile.svg);  
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap:0.7rem;
+}
+.container{
+    padding: 1.3rem;
+    font-family: Roboto-Regular;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    background-color: #ffffff;
+}
+h1{
+    font-family: Roboto-Bold;
+}
+ul{
+    list-style: none;
+    --gutter: 16px;
+    margin:0 0 0 18px;
+}
+li {
+    padding-left:var(--gutter) ;
+    margin-bottom: 10px;
+}
+ul li::marker{
+    content: url(./assets/images/icon-list.svg);    
+}
+label{
+    font-weight: bold;
+}
+input{
+    
+    border: 2px solid hsl(231, 7%, 60%);
+    border-radius: 5px;
+    height: 36px;
+    padding:0.5rem;
+    margin-bottom: 10px;
+}
+input:focus-visible{
+    border: 2px solid #000; 
+    outline-color: #000;
+}
+.error:focus-visible,.error{
+        background-color: hsl(4, 89%, 89%);
+        border: 2px solid hsl(4, 82%, 65%); 
+        outline-color: hsl(4, 82%, 65%);
+        color:hsl(4, 100%, 57%);
+}
+button{
+    height: 36px;
+    border: 0px; 
+    background-color: hsl(234, 29%, 20%);
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 600;
+}
+button:hover{
+    background-color: hsl(4, 100%, 67%);
+}
+.label-msg{
+    display: flex;
+    justify-content: space-between;
+}
+.error-msg{
+    color: hsl(4, 100%, 57%);
+    font-size: small;
+    margin-right: 8px;
+    display: none;
+}
+.success-msg{
+    display: block;
+    margin: 16px;
+    font-family: Roboto-Regular;
+}
+.success-msg h1{
+    margin-bottom: 16px;
+}
+.success-msg img{
+    margin: 55px 0 20px 0;
+    width: 45px;
+}
+#success-email{
+    font-weight: bold;
+}
+.success-msg .btn-container{
+    display: flex;
+    justify-content: center;
+}
+.success-msg button{
+    position: absolute;
+    bottom: 40px;
+    width: 90%;
+    margin-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+    body{
+        background-color: hsl(235, 18%, 26%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+    }
+    main{
+        max-width: 768px;
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 15px;
+        max-height: 450px;
+    }
+    .main-container{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .sign-up-img{
+        width: fit-content;
+        height: 418px;
+        content:url(./assets/images/illustration-sign-up-desktop.svg);
+    }
+    .success-msg button{
+        
+        position: relative;
+        bottom:0;
+    }
+    
+}
+.attribution { font-size: 15px; text-align: center;    
+}
 .attribution a { color: hsl(228, 45%, 44%); }
